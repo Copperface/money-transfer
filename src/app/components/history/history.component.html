@@ -1,0 +1,32 @@
+<table class="history-table">
+  <tr class="main-table__header">
+    <th>№</th>
+    <th>Карта плательщика</th>
+    <th>Карта получателя</th>
+    <th>Сумма</th>
+    <th>Дата выполнения</th>
+    <th>Действие</th>
+  </tr>
+  <tr *ngFor="let item of transferItems">
+    <td>{{item.id}}</td>
+    <td>{{item.body.transferFrom.cardNumber}}</td>
+    <td>{{item.body.transferTo.cardNumber}}</td>
+    <td>{{item.body.amount}}</td>
+    <td>{{item.date | date: 'dd/mm/yyyy HH:mm'}}</td>
+    <td>
+      <div class="control-buttons">
+        <button
+          class="delete-button"
+          (click)="deleteTransferItem(item.id)"
+        >Удалить
+        </button>
+        <button
+          class="repeat-button"
+          (click)="repeatTransferItem(item.id)"
+        >Повторить
+        </button>
+      </div>
+    </td>
+
+  </tr>
+</table>

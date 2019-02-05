@@ -1,0 +1,85 @@
+.transfer > .wrapper {
+  padding: 20px;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card {
+  width: 350px;
+  height: 220px;
+  border-radius: 12px;
+  border: 1px solid black;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25), 0 3px 3px rgba(0, 0, 0, 0.22);
+  background: #efefef;
+}
+
+.card .wrapper {
+  padding: 20px;
+}
+
+.card h2 {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input {
+  border-radius: 5px;
+  border: 1px solid black;
+  margin-top: 5px;
+  width: 100%;
+  display: block;
+}
+
+.card label {
+  display: block;
+  margin: 10px 0;
+}
+
+.cols {
+  display: flex;
+  justify-content: space-between;
+}
+
+.active-for {
+  margin: 10px;
+}
+
+.active-for label {
+  margin: 4px 0;
+}
+
+.control {
+  padding-top: 30px;
+  width: 200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.control button {
+  display: block;
+  width: 176px;
+  height: 32px;
+
+  border: 1px solid black;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25), 0 3px 3px rgba(0, 0, 0, 0.22);
+  background-color: white;
+  border-radius: 5px;
+
+  text-align: center;
+  line-height: 32px;
+}
+
+.control button:hover {
+  background-color: lightblue;
+}
+
+.error {
+  border-color: red;
+}

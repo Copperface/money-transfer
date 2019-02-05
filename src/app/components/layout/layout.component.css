@@ -1,0 +1,41 @@
+.wrapper {
+  margin: 0 auto;
+  width: 1024px;
+  padding-top: 100px;
+}
+
+.content {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  background-color: white;
+  border-radius: 5px;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-start;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav a {
+  display: block;
+  width: 176px;
+  height: 32px;
+
+  box-shadow: 0 3px 3px rgba(0,0,0,0.25), 0 3px 3px rgba(0,0,0,0.22);
+  background-color: white;
+  border-radius: 5px;
+
+  text-align: center;
+  line-height: 32px;
+
+  margin: 5px;
+}
+
+nav a:hover {
+  background-color: lightblue;
+}
+
+

@@ -1,0 +1,81 @@
+<div class="transfer">
+  <div class="wrapper">
+    <form class="transfer__form"
+          [formGroup]="transferForm"
+          (ngSubmit)="onSubmit()"
+    >
+      <div class="cards-container">
+        <div class="transfer__from card" formGroupName="transferFrom">
+          <div class="wrapper">
+            <h2>Карта плательщика</h2>
+            <label>Номер
+              <input class="transfer__from-number"
+                     type="text"
+                     placeholder="0000 0000 0000 0000"
+                     formControlName="cardNumber"
+                     [textMask]="{mask: cardNumberMask,guide: false}"
+                     [class.error]="!transferForm.get('transferFrom.cardNumber').valid && transferForm.get('transferFrom.cardNumber').touched"
+              >
+            </label>
+            <div class="cols">
+              <div class="col">
+                <label>ФИО держателя
+                  <input class="transfer__from-initials"
+                         type="text"
+                         placeholder="Иванов Иван Иванович"
+                         maxlength="108"
+                         formControlName="senderName"
+                         [class.error]="!transferForm.get('transferFrom.senderName').valid && transferForm.get('transferFrom.senderName').touched"
+                  >
+                </label>
+              </div>
+              <div class="col">
+                <div class="active-for">
+                  <label>Активна до</label>
+                  <select class="transfer__from-month"
+                          formControlName="activeMonth"
+                  >
+                    <option *ngFor="let month of months"
+                            [value]="month"
+
+                    >{{month}}</option>
+                  </select>
+                  <select class="transfer__from-year"
+                          formControlName="activeYear"
+                  >
+                    <option *ngFor="let year of years"
+                            [value]="year"
+                    >{{year}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="transfer__to card" formGroupName="transferTo">
+          <div class="wrapper">
+            <h2>Карта получателя</h2>
+            <label>Номер карты получателя
+              <input class="transfer__to-number"
+                     type="text"
+                     placeholder="0000 0000 0000 0000"
+                     formControlName="cardNumber"
+                     [textMask]="{mask: cardNumberMask,guide: false}"
+                     [class.error]="!transferForm.get('transferTo.cardNumber').valid && transferForm.get('transferTo.cardNumber').touched"
+              >
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="control">
+        <label>Сумма перевода
+          <input [class.error]="!transferForm.get('amount').valid && transferForm.get('amount').touched"
+                 type="number"
+                 formControlName="amount"
+          >
+        </label><br>
+        <button class="transfer__send">Отправить</button>
+      </div>
+    </form>
+  </div>
+</div>
